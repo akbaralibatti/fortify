@@ -1,0 +1,10 @@
+for uploading the web-client to the cloud
+
+npm run build
+firebase deploy
+
+
+
+for uploading server to the cloud
+
+gcloud run deploy signaling-server --source . --region asia-south1 --allow-unauthenticated

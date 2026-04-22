@@ -1,0 +1,568 @@
+/* ==========================================================================
+   Dark Theme Color Palette & Variables
+   ========================================================================== */
+:root {
+  --bg-main: #0b0f19;         /* Deep space background */
+  --bg-card: #151b2b;         /* Slightly lighter card background */
+  --bg-card-hover: #1e2638;
+  --bg-input: #0f1422;        /* Input fields */
+
+  --text-primary: #f8fafc;    /* High contrast text */
+  --text-secondary: #94a3b8;  /* Muted text */
+
+  --accent-primary: #3b82f6;  /* Bright Blue */
+  --accent-hover: #2563eb;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+
+  --color-success: #10b981;   /* Emerald Green */
+  --color-error: #ef4444;     /* Rose Red */
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(59, 130, 246, 0.5);
+}
+
+/* ==========================================================================
+   Reset and Base Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* Remove default link underlines wrapping buttons */
+a {
+  text-decoration: none;
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ==========================================================================
+   Login Page Styles
+   ========================================================================== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #1e2638 0%, var(--bg-main) 70%);
+}
+
+.login-card {
+  background: rgba(21, 27, 43, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-color);
+  width: 100%;
+  max-width: 440px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-main) 100%);
+  border-radius: 24px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+}
+
+.login-title {
+  margin: 0 0 10px 0;
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.form-input::placeholder {
+  color: #475569;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px var(--accent-glow);
+}
+
+.btn-primary:disabled {
+  background: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.demo-credentials {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px dashed var(--border-color);
+}
+
+.demo-credentials-title {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.demo-credentials-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.demo-credentials-label {
+  color: var(--text-secondary);
+}
+
+.demo-credentials-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-family: monospace;
+  background: rgba(0,0,0,0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Main App, Dashboard & Header Styles
+   ========================================================================== */
+.app-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #1e2638 0%, var(--bg-main) 60%);
+  padding: 20px;
+}
+
+.app-header {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-info h2 {
+  margin: 0 0 5px 0;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.status-dot.connected {
+  background-color: var(--color-success);
+  box-shadow: 0 0 12px var(--color-success);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--color-success); }
+  50% { opacity: 0.5; box-shadow: 0 0 4px var(--color-success); }
+}
+
+.status-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-logout {
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-secondary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Buttons (Dashboard & Remote Access)
+   ========================================================================== */
+.host-buttons {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-host {
+  padding: 14px 24px;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-host:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--text-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-host.connected {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: var(--color-success);
+  color: var(--color-success);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
+}
+
+.btn-host.connected:hover {
+  transform: none;
+}
+
+.btn-fullscreen {
+  padding: 14px 24px;
+  background-color: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-fullscreen:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-disconnect {
+  padding: 14px 24px;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-disconnect:hover {
+  background-color: var(--color-error);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+}
+
+.btn-disconnect:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Remote Access Specifics
+   ========================================================================== */
+.connected-host-info {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 16px 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.connected-host-info strong {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.no-hosts-message {
+  margin-top: 40px;
+  padding: 40px 20px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.no-hosts-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-hosts-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.no-hosts-subtitle {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Intruder Monitor Overrides (Forces inline styles to dark mode)
+   ========================================================================== */
+/* Targets the cards mapped in IntruderMonitor.js that have inline background: "white" */
+.app-container > div[style*="grid"] > div {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  color: var(--text-secondary) !important;
+  transition: transform 0.2s ease;
+}
+
+.app-container > div[style*="grid"] > div:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.15) !important;
+}
+
+.app-container > div[style*="grid"] > div p {
+  margin: 8px 0;
+}
+
+.app-container > div[style*="grid"] > div b {
+  color: var(--text-primary) !important;
+}
+
+/* ==========================================================================
+   Video Player & Fullscreen Logic (Preserved entirely)
+   ========================================================================== */
+.video-container {
+  background: #000;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.remote-video {
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16/10;
+  border-radius: 8px;
+  display: block;
+  pointer-events: auto;
+}
+
+.remote-video::-webkit-media-controls,
+.remote-video::-webkit-media-controls-enclosure,
+.remote-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.video-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  padding: 0;           /* Clean edge-to-edge in fullscreen */
+  border: none;         /* Remove border in fullscreen */
+  border-radius: 0;
+}
+
+.video-container:fullscreen video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;     /* Remove rounded corners on the video itself */
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-info h2 {
+    font-size: 20px;
+  }
+
+  .btn-logout {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .host-buttons {
+    flex-direction: column;
+  }
+
+  .btn-host,
+  .btn-disconnect,
+  .btn-fullscreen {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-card {
+    padding: 30px 25px;
+    border-radius: 16px;
+  }
+}
