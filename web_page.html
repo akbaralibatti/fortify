@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortify Control</title>
+</head>
+
+<body style="text-align:center;font-family:Arial;margin-top:100px;">
+
+    <h1>Fortify Control Panel</h1>
+
+    <input id="pass" placeholder="Enter Password">
+    <br><br>
+
+    <button onclick="setPass()">Set Password</button>
+    <br><br>
+
+    <button onclick="send('lock')">Lock Laptop</button>
+    <br><br>
+
+    <button onclick="send('screenoff')">Turn Screen Off</button>
+
+    <br><br>
+    <p id="status"></p>
+
+    <script>
+        const SERVER = "http://10.53.54.167:8000"; 
+
+        function send(cmd){
+            fetch(SERVER + "/" + cmd)
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("status").innerText = data;
+            })
+        }
+
+        function setPass(){
+            let p = document.getElementById("pass").value;
+            fetch(SERVER + "/setpass/" + p)
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("status").innerText = data;
+            })
+        }
+    </script>
+
+</body>
+</html>
